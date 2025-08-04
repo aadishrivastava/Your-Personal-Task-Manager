@@ -45,17 +45,29 @@ JWT (JSON Web Token) for authentication
 📁 Project Structure
 
 Task-Manager/
+
 ├── backend/
+
 │   ├── models/
+
 │   ├── routes/
+
 │   ├── controllers/
+
 │   ├── middleware/
+
 │   └── server.js
+
 ├── frontend/
+
 │   ├── src/
+
 │   │   ├── components/
+
 │   │   ├── pages/
+
 │   │   └── App.js
+
 └── README.md
 
 
