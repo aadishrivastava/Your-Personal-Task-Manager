@@ -1,4 +1,4 @@
-🗂️ Task Management App =>
+🗂️ Task Management App :
 
 A full-stack Task Management application where users can register, log in, and manage their daily tasks with completion tracking, filtering, and detailed task views.
 
