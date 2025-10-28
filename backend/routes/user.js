@@ -5,9 +5,7 @@ const jwt=require("jsonwebtoken");
 require("dotenv").config();
 
 router.post("/sign-in", async (req,res)=>{
-    console.log("BODY RECEIVED:", req.body);
     try {
-        
         const { username,email,password }=req.body;
         const existingUser=await User.findOne({username:username});
         const existingEmail=await User.findOne({email:email});
