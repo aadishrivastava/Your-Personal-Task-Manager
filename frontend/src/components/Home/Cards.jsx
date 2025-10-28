@@ -21,17 +21,17 @@ const Cards = ({home,setInputDiv,Data={},setData,setUpdatedData}) => {
         const body = new URLSearchParams();
         body.append("complete",newStatus);
         await axios.put(
-            `http://localhost:1000/api/v2/update-complete-task/${id}`,
+            `https://your-personal-task-manager-backend.onrender.com/api/v2/update-complete-task/${id}`,
             {},
             { headers }
         );
-        let fetchUrl = "http://localhost:1000/api/v2/get-all-tasks";
+        let fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-all-tasks";
         if (location.pathname === "/importantTasks") {
-            fetchUrl = "http://localhost:1000/api/v2/get-imp-tasks";
+            fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-imp-tasks";
         } else if (location.pathname === "/completedTasks") {
-            fetchUrl = "http://localhost:1000/api/v2/get-complete-tasks";
+            fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-complete-tasks";
         } else if (location.pathname === "/incompletedTasks") {
-            fetchUrl = "http://localhost:1000/api/v2/get-incomplete-tasks";
+            fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-incomplete-tasks";
         }
 
         const updated = await axios.get(fetchUrl, { headers });
@@ -53,19 +53,19 @@ const Cards = ({home,setInputDiv,Data={},setData,setUpdatedData}) => {
             const body = new URLSearchParams();
             body.append("important",newStatus);
             const res=await axios.put(
-                `http://localhost:1000/api/v2/update-imp-task/${id}`,
+                `https://your-personal-task-manager-backend.onrender.com/api/v2/update-imp-task/${id}`,
                 {},
                 { headers }
             );
             
              
-            let fetchUrl = "http://localhost:1000/api/v2/get-all-tasks";
+            let fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-all-tasks";
             if (location.pathname === "/importantTasks") {
-            fetchUrl = "http://localhost:1000/api/v2/get-imp-tasks";
+            fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-imp-tasks";
             } else if (location.pathname === "/completedTasks") {
-            fetchUrl = "http://localhost:1000/api/v2/get-complete-tasks";
+            fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-complete-tasks";
             } else if (location.pathname === "/incompletedTasks") {
-            fetchUrl = "http://localhost:1000/api/v2/get-incomplete-tasks";
+            fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-incomplete-tasks";
             }
 
             const updated = await axios.get(fetchUrl, { headers });
@@ -96,23 +96,21 @@ const Cards = ({home,setInputDiv,Data={},setData,setUpdatedData}) => {
       "Content-Type": "application/x-www-form-urlencoded",
     };
 
-    // Delete the task
     const res = await axios.delete(
-      `http://localhost:1000/api/v2/delete-tasks/${id}`,
+      `https://your-personal-task-manager-backend.onrender.com/api/v2/delete-tasks/${id}`,
       { headers }
     );
 
-    // Decide which API to call based on current route
-    let fetchUrl = "http://localhost:1000/api/v2/get-all-tasks";
+    let fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-all-tasks";
     if (location.pathname === "/importantTasks") {
-      fetchUrl = "http://localhost:1000/api/v2/get-imp-tasks";
+      fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-imp-tasks";
     } else if (location.pathname === "/completedTasks") {
-      fetchUrl = "http://localhost:1000/api/v2/get-complete-tasks";
+      fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-complete-tasks";
     } else if (location.pathname === "/incompletedTasks") {
-      fetchUrl = "http://localhost:1000/api/v2/get-incomplete-tasks";
+      fetchUrl = "https://your-personal-task-manager-backend.onrender.com/api/v2/get-incomplete-tasks";
     }
 
-    // Fetch updated tasks for current view
+
     const updated = await axios.get(fetchUrl, { headers });
     setData({ tasks: updated.data.data });
 

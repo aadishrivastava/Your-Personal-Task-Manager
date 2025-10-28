@@ -28,7 +28,7 @@ const Login = () => {
         encodedData.append("password", Data.password);
 
         const response = await axios.post(
-          "http://localhost:1000/api/v1/log-in",
+          "https://your-personal-task-manager-backend.onrender.com/api/v1/log-in",
           encodedData,
           {
             withCredentials: true,
@@ -38,7 +38,6 @@ const Login = () => {
           }
         );
         setData({username:"",password:""})
-        // console.log("Login successful:", response.data);
         localStorage.setItem("id",response.data.id);
         localStorage.setItem("token",response.data.token);
         dispatch(authActions.login());

@@ -30,9 +30,9 @@ const InputData = ({InputDiv,setInputDiv,setData,UpdatedData,setUpdatedData}) =>
 
         try {
                 
-            await axios.post("http://localhost:1000/api/v2/create-task", body, { headers });
+            await axios.post("https://your-personal-task-manager-backend.onrender.com/api/v2/create-task", body, { headers });
                 
-            const updated = await axios.get("http://localhost:1000/api/v2/get-all-tasks", { headers });
+            const updated = await axios.get("https://your-personal-task-manager-backend.onrender.com/api/v2/get-all-tasks", { headers });
             setData({tasks:updated.data.data}); 
 
             setFormData({ title: "", desc: "" });
@@ -62,9 +62,9 @@ const InputData = ({InputDiv,setInputDiv,setData,UpdatedData,setUpdatedData}) =>
 
         try {
                 
-            await axios.put(`http://localhost:1000/api/v2/update-tasks/${UpdatedData.id}`, body, { headers });
+            await axios.put(`https://your-personal-task-manager-backend.onrender.com/api/v2/update-tasks/${UpdatedData.id}`, body, { headers });
                 
-            const updated = await axios.get("http://localhost:1000/api/v2/get-all-tasks", { headers });
+            const updated = await axios.get("https://your-personal-task-manager-backend.onrender.com/api/v2/get-all-tasks", { headers });
             setData({tasks:updated.data.data}); 
 
             setFormData({title:"",desc:""});

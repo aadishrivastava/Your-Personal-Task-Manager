@@ -14,7 +14,7 @@ const AllTasks = () => {
   };
   useEffect(() => {
     const fetch=async ()=>{
-      const response=await axios.get("http://localhost:1000/api/v2/get-all-tasks",{
+      const response=await axios.get("https://your-personal-task-manager-backend.onrender.com/api/v2/get-all-tasks",{
         headers
       });
       

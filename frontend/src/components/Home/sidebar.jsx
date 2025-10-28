@@ -49,7 +49,7 @@ const Sidebar = () => {
     };
     useEffect(() => {
       const fetch=async ()=>{
-        const response=await axios.get("http://localhost:1000/api/v2/user",{
+        const response=await axios.get("https://your-personal-task-manager-backend.onrender.com/api/v2/user",{
             headers
         });
         setData(response.data.data);
